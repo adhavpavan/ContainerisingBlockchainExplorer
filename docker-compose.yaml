@@ -5,9 +5,7 @@ volumes:
   walletstore:
 
 networks:
-  mynetwork.com:
-    external:
-      name: net_byfn
+  test:
 
 services:
   explorerdb.mynetwork.com:
@@ -26,7 +24,7 @@ services:
     volumes:
       - data:/var/lib/postgresql/data
     networks:
-      - mynetwork.com
+      - test
 
   explorer.mynetwork.com:
     image: hyperledger/explorer:latest
@@ -55,4 +53,4 @@ services:
       explorerdb.mynetwork.com:
         condition: service_healthy
     networks:
-      - mynetwork.com
+      - test
