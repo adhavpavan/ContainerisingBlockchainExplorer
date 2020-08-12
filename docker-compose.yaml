@@ -27,7 +27,7 @@ services:
       - test
 
   explorer.mynetwork.com:
-    image: hyperledger/explorer:latest
+    image: hyperledger/explorer:1.0.0
     container_name: explorer.mynetwork.com
     hostname: explorer.mynetwork.com
     environment:
