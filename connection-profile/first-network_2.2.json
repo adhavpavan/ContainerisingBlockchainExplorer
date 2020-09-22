@@ -1,12 +1,19 @@
 {
-	"name": "first-network",
+	"name": "first network (ignored)",
 	"version": "1.0.0",
 	"license": "Apache-2.0",
 	"client": {
 		"tlsEnable": true,
-		"adminUser": "admin",
-		"adminPassword": "adminpw",
-		"enableAuthentication": false,
+		"caCredential": {
+			"id": "admin",
+			"password": "adminpw"
+		},
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw",
+			"affiliation": "org1.department1"
+		},
+		"enableAuthentication": true,
 		"organization": "Org1MSP",
 		"connection": {
 			"timeout": {
@@ -39,6 +46,9 @@
 			"adminPrivateKey": {
 				"path": "/etc/data/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/priv_sk"
 			},
+			"peers": [
+				"peer0.org1.example.com"
+			],
 			"signedCert": {
 				"path": "/etc/data/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
 			}
